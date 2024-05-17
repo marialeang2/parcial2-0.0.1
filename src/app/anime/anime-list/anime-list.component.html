@@ -1,0 +1,28 @@
+
+
+<div class="container-fluid">
+  <div *ngIf="selected">
+    <app-anime-detail [animeDetail]="selectedAnime"></app-anime-detail>
+   </div>
+
+   <hr />
+  <div class="row">
+    <div class="col-sm-2 mb-3 mb-sm-0" *ngFor="let a of animes">
+      <div class="card p-2" style="width: 15rem; height: 33rem">
+        <div class = "card-header"> {{a.name}}</div>
+        <img
+          class="card-img-top"
+          src="{{ a.img }}"
+          alt="{{ a.name }}"
+          (click) = "onSelected(a)"
+        />
+        <div class="card">
+          <h5 class="card-text"> ⭐ {{a.rating}}</h5>
+          <p class="card-text">{{ a.rating }}</p>
+          <p class="card-text">{{ a.description }}</p>
+          <a href="#" class="btn btn-primary">More Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
